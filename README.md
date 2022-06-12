@@ -1,5 +1,5 @@
 # ArcMap Tools
-Geoprocessing toolbox for ArcMap 10.8.2
+Geoprocessing toolbox for ArcMap
 
 # System Requirements
 1. Windows 10, 11
