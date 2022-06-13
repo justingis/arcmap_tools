@@ -13,8 +13,16 @@
 #   def query, joins and relates
 # List each field in the layer with Field Properties (Name, Alias, Type, ect)
 # Calc % complete and null or empty values
+# Should be able to add multiple layers to create multiple sheets within an Excel doc
 
 import arcpy
 
-arcpy.AddMessage('Hello Bash!!')
+def get_layer_info():
+    input_
 
+
+def main():
+    get_layer_info()
+
+if __name__ == '__main__':
+    main()
