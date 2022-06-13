@@ -14,4 +14,4 @@ This process adds an additional package (openpyxl) to the default ArcMap Python 
   * Open Windows Command Prompt (CMD)
   * cd C:\Python27\ArcGIS10.8\Scripts
   * pip install openpyxl
-3. Open ArcMap or ArcCatalog and navigate to the toolbox (.tbx) in the repository
+3. Open ArcMap or ArcCatalog and navigate to the toolbox (.tbx file) in the repository
