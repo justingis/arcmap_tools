@@ -1,5 +1,9 @@
 # ArcMap Tools
-Geoprocessing toolbox for ArcMap
+Geoprocessing toolbox for ArcMap. Includes the following tools:
+1. Add Coordinates
+2. Export Attachments
+3. Export to XLSX
+4. ID Generator
 
 # System Requirements
 1. Windows 10, 11
