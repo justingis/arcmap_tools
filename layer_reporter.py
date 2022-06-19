@@ -58,6 +58,19 @@ def get_layer_info():
     precision = field.precision
     isNullable = field.isNullable
     domain = field.domain
+    percent_complete = None # use percent_complete function
+
+def percent_complete():
+  pass
+
+def write_to_txt():
+  pass
+
+def write_to_csv():
+  pass
+
+def write_to_xlsx():
+  pass
 
 def main():
     get_layer_info()
