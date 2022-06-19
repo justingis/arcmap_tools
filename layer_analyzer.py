@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------------
-# Name:        Layer Analyzer
-# Purpose:     Output layer information to an XLSX
+# Name:        Layer Reporter
+# Purpose:     Writes layer properties and schema information to an xlsx, txt, or csv
 #
 # Author:      Justin Hawley
 #
@@ -27,42 +27,37 @@ def joinCheck(lyr):
   return False
 
 def get_layer_info():
-  layer_properties = {}
-  field_properties = {}
   input_layer = arcpy.GetParameter(0)
   desc = arcpy.Describe(input_layer)
 
-  layer_properties['layer_name'] = desc.name
-  layer_properties['layer_type'] = desc.dataType
-  layer_properties['layer_type'] = desc.dataType
-  layer_properties['layer_desc'] = input_layer.description
-  layer_properties['layer_credits'] = input_layer.credits
-  layer_properties['layer_visible'] = input_layer.visible
-  layer_properties['source_path'] = desc.catalogPath
-  layer_properties['source_format'] = desc.dataElement.dataType
-  layer_properties['geometry_type'] = desc.shapeType
-  layer_properties['has_m'] = desc.hasM
-  layer_properties['has_z'] = desc.hasZ
-  layer_properties['spatial_reference'] = desc.spatialReference.name
-  layer_properties['def_query'] = input_layer.definitionQuery
-  layer_properties['has_join'] = joinCheck(input_layer)
-  layer_properties['feature_count'] = arcpy.GetCount_management(input_layer)
-
-  #for key, val in layer_properties.items():
-    #arcpy.AddMessage('{}: {}'.format(key, val))
+  layer_name = desc.name
+  layer_type = desc.dataType
+  layer_type = desc.dataType
+  layer_desc = input_layer.description
+  layer_credits = input_layer.credits
+  layer_visible = input_layer.visible
+  source_path = desc.catalogPath
+  source_format = desc.dataElement.dataType
+  geometry_type = desc.shapeType
+  has_m = desc.hasM
+  has_z = desc.hasZ
+  spatial_reference = desc.spatialReference.name
+  def_query = input_layer.definitionQuery
+  has_join = joinCheck(input_layer)
+  feature_count = arcpy.GetCount_management(input_layer)
 
   field_list = desc.fields
   for field in field_list:
-    field_properties['name'] = field.name 
-      #field.aliasName,
-      #field.type, 
-      #field.length, 
-      #field.editable, 
-      #field.required, 
-      #field.scale, 
-      #field.precision,
-      #field.isNullable,
-      #field.domain
+    name = field.name
+    alias = field.aliasName
+    type = field.type
+    length = field.length
+    editable = field.editable
+    required = field.required
+    scale = field.scale
+    precision = field.precision
+    isNullable = field.isNullable
+    domain = field.domain
 
 def main():
     get_layer_info()
