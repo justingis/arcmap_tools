@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------------
 # Name:        Export Field Properties
-# Purpose:     Writes properties properties to a CSV file
+# Purpose:     Writes the properties of all fields in a layer to a CSV file
 #
 # Author:      Justin Hawley
 #
@@ -48,24 +48,26 @@ def get_layer_fields():
 def write_to_screen(): #have option for layer properties and or field properties to write
   my_fields = get_layer_fields()
   arcpy.AddMessage('{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}'.format('Name', 'Alias', 'Type', 'Length', 'Editable', 'Required',\
-    'Scale', 'Precision', 'Is Nullable', 'Domain', '% Complete'))
+    'Scale', 'Precision', 'Is Nullable', 'Domain', 'Percent Complete'))
   for field in my_fields:
     arcpy.AddMessage('{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}'.format(field[0], field[1], field[2], field[3], field[4], field[5], field[6],\
       field[7], field[8], field[9], field[10]))
 
-
 def write_to_csv():
   output_props_csv = arcpy.GetParameterAsText(1)
-  my_props = get_layer_properties()
-  #my_fields = get_layer_fields()
+  my_fields = get_layer_fields()
 
-  output_props_fields = ('Name', 'Type', 'Description', 'Credits', \
-    'Visible', 'Source', 'Format', 'Geom Type', 'Has M', 'Has Z', 'Spatial Ref', 'Def Query', 'Has Join', 'Feature Count')
+  field_schema = ('Name','Alias', 'Type', 'Length', 'Editable', \
+    'Required', 'Scale', 'Precision', 'Is Nullable', 'Domain', 'Percent Complete')
   
-  output_props_row = (my_props[0], my_props[1], my_props[2], my_props[3], \
-    my_props[4], my_props[5], my_props[6], my_props[7], my_props[8], my_props[9], my_props[10], my_props[11], my_props[12], my_props[13])
-
   with open(output_props_csv, 'wb') as csv_file: 
     csvwriter = csv.writer(csv_file) 
-    csvwriter.writerow(output_props_fields)
-    csvwriter.writerow(output_props_row)
+    csvwriter.writerow(field_schema)
+    csvwriter.writerows(my_fields)
+
+def main():
+  write_to_screen()
+  write_to_csv()
+
+if __name__ == '__main__':
+    main()
