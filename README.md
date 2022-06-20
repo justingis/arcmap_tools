@@ -4,7 +4,8 @@ Geoprocessing toolbox for ArcMap. Includes the following tools:
 2. Export Attachments
 3. Export to XLSX
 4. ID Generator
-5. Layer Reporter
+5. Export Field Properties
+6. Export Layer Properties
 
 # System Requirements
 1. Windows 10, 11
