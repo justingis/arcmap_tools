@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------------
 # Name:        Export Field Properties
-# Purpose:     Writes the properties of all fields in a layer to a CSV file
+# Purpose:     Exports the properties of all fields in a layer to a CSV file
 #
 # Author:      Justin Hawley
 #

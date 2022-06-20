@@ -7,7 +7,6 @@
 # Created:     06/13/2022
 #-------------------------------------------------------------------------------
 
-
 # Additional functionality that could be added
   # Field Count
   # Scale Range
