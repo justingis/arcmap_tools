@@ -14,13 +14,12 @@
   # Other display properties
   # Allow multiple input layers which could output multiple CSV, TXT or sheets within an XLSX document
 
-# explore why Has Join is true for dma layer and not for counties
 # use an output folder directly where csv files will be placed and named according to layer
 
 import arcpy
 import csv
 
-# not working correctly?
+# not correct when the layer has a field as the same name of the layer
 def joinCheck(lyr):
   fList = arcpy.Describe(lyr).fields
   for f in fList:
