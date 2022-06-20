@@ -9,14 +9,18 @@
 
 
 # Additional functionality that could be added
-# Has Relates
-# Scale Range
-# Other display properties
-# Allow multiple input layers which could output multiple CSV, TXT or sheets within an XLSX document
+  # Has Relates
+  # Scale Range
+  # Other display properties
+  # Allow multiple input layers which could output multiple CSV, TXT or sheets within an XLSX document
+
+# explore why Has Join is true for dma layer and not for counties
+# use an output folder directly where csv files will be placed and named according to layer
 
 import arcpy
+import csv
 
-# this function could be better
+# not working correctly?
 def joinCheck(lyr):
   fList = arcpy.Describe(lyr).fields
   for f in fList:
@@ -84,11 +88,22 @@ def get_percent_complete(input_layer, field_name, feature_count):
       val_count += 1
   return (val_count / float(feature_count)) * 100
 
-def write_to_txt():
-  pass
 
 def write_to_csv():
-  pass
+  output_props_csv = arcpy.GetParameterAsText(1)
+  my_props = get_layer_properties()
+  #my_fields = get_layer_fields()
+
+  output_props_fields = ('Name', 'Type', 'Description', 'Credits', \
+    'Visible', 'Source', 'Format', 'Geom Type', 'Has M', 'Has Z', 'Spatial Ref', 'Def Query', 'Has Join', 'Feature Count')
+  
+  output_props_row = (my_props[0], my_props[1], my_props[2], my_props[3], \
+    my_props[4], my_props[5], my_props[6], my_props[7], my_props[8], my_props[9], my_props[10], my_props[11], my_props[12], my_props[13])
+
+  with open(output_props_csv, 'wb') as csv_file: 
+    csvwriter = csv.writer(csv_file) 
+    csvwriter.writerow(output_props_fields)
+    csvwriter.writerow(output_props_row)
 
 def write_to_xlsx():
   pass
@@ -111,6 +126,7 @@ def write_to_screen(): #have option for layer properties and or field properties
 
 def main():
   write_to_screen()
+  write_to_csv()
 
 if __name__ == '__main__':
     main()
