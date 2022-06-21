@@ -1,8 +1,8 @@
 #-------------------------------------------------------------------------------
 # Name:        Export Layer Properties
-# Purpose:     Writes layer properties to a CSV file
+# Purpose:     Exports layer properties to a CSV file
 #
-# Author:      Justin Hawley
+# Author:      Justin Hawley (justin@orcagis.com)
 #
 # Created:     06/13/2022
 #-------------------------------------------------------------------------------

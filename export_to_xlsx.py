@@ -1,3 +1,12 @@
+#-------------------------------------------------------------------------------
+# Name:        Export to XLSX
+# Purpose:     Exports a layer or table to .XLSX format. User may select which fields to include in the export.
+#
+# Author:      Justin Hawley (justin@orcagis.com)
+#
+# Created:     06/13/2022
+#-------------------------------------------------------------------------------
+
 import arcpy
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font

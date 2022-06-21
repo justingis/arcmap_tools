@@ -1,3 +1,14 @@
+#-------------------------------------------------------------------------------
+# Name:        Add Coordinates
+# Purpose:     Adds XY, and or LAT LONG coordinate fields or updates existing fields.    
+#
+# Author:      Justin Hawley (justin@orcagis.com)
+#
+# Created:     06/13/2022
+#-------------------------------------------------------------------------------
+
+
+
 import arcpy
 
 def main():
@@ -76,8 +87,6 @@ def main():
                 arcpy.AddField_management(inputPointLayer, "LONG_", "DOUBLE", "", "", "", "", "NULLABLE", "NON_REQUIRED", "")
                 updateLongField = "LONG_"
 
-    
-
 
     if xy == True:
         rows = arcpy.UpdateCursor(inputPointLayer)
@@ -108,8 +117,5 @@ def main():
                 row.setValue(updateLatField, pnt.Y)
             rows.updateRow(row)
             
-        
-
-
 if __name__ == '__main__':
     main()

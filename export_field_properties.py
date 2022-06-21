@@ -2,7 +2,7 @@
 # Name:        Export Field Properties
 # Purpose:     Exports the properties of all fields in a layer to a CSV file
 #
-# Author:      Justin Hawley
+# Author:      Justin Hawley (justin@orcagis.com)
 #
 # Created:     06/13/2022
 #-------------------------------------------------------------------------------
