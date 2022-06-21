@@ -1,11 +1,11 @@
 # ArcMap Tools
 Geoprocessing toolbox for ArcMap. Includes the following tools:
-1. Add Coordinates
-2. Export Attachments
-3. Export to XLSX
-4. ID Generator
-5. Export Field Properties
-6. Export Layer Properties
+1. Add Coordinates: Adds XY, and or LAT LONG coordinate fields or updates existing fields.  If no update fields are selected, new additional fields will be added to the point layer.  
+3. Export Attachments: Exports attachments (stored as a blob field) to a specified folder location.  
+4. Export to XLSX: Exports a layer or table to .XLSX format.  User may select which fields to include in the export.
+5. ID Generator: Calculates unique ID's for a given input layer, field, start value, prefix, suffix, and pad value.
+6. Export Field Properties: Exports field properties to a CSV file which include field name, alias, type, length, editable, required, scale, precision, nullable, domain, and percent complete (percentage of records that have a value and are not blank or null)
+7. Export Layer Properties: Exports layer properties to a CSV file which include layer name, type, description, credits, visible, source path, source format, geometry type, has M, has Z, spatial reference, definition query, and feature count. 
 
 # System Requirements
 1. Windows 10, 11
