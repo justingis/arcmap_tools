@@ -6,6 +6,7 @@ Geoprocessing toolbox for ArcMap. Feel free to download and use these tools at y
 5. ID Generator: Calculates unique ID's for a given input layer, field, start value, prefix, suffix, and pad value.
 6. Export Field Properties: Exports field properties to a CSV file which include field name, alias, type, length, editable, required, scale, precision, nullable, domain, and percent complete (percentage of records that have a value and are not blank or null)
 7. Export Layer Properties: Exports layer properties to a CSV file which include layer name, type, description, credits, visible, source path, source format, geometry type, has M, has Z, spatial reference, definition query, and feature count. 
+8. Workspace Reporter: Recursively walks through an input folder location or geodatabase (workspace) and generates a csv file of the schema (field name, field type, field length) for each file or feature class
 
 # System Requirements
 1. Windows 10, 11
