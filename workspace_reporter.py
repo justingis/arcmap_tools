@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------------
 # Name:        Workspace Reporter
-# Purpose:     Recursively walks an input folder location or geodatabase (workspace) and generates 
+# Purpose:     Recursively walks through an input folder location or geodatabase (workspace) and generates 
 #   a csv file of the schema (field name, field type, field length) for each file or feature class
 #
 # Author:      Justin Hawley (justin@orcagis.com)
