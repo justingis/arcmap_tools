@@ -1,5 +1,5 @@
 # ArcMap Tools
-Geoprocessing toolbox for ArcMap. Feel free to download and use these tools at your conveniance. And if you wish, submit a pull request to make them better. The following tools are included:
+Geoprocessing toolbox for ArcMap. Feel free to download and use these tools at your conveniance. And if you wish, contribute to the repo to make it better. The following tools are included:
 1. Add Coordinates: Adds XY, and or LAT LONG coordinate fields or updates existing fields.  If no update fields are selected, new additional fields will be added to the point layer.  
 3. Export Attachments: Exports attachments (stored as a blob field) to a specified folder location.  
 4. Export to XLSX: Exports a layer or table to .XLSX format.  User may select which fields to include in the export.
