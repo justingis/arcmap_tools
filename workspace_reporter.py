@@ -14,8 +14,8 @@ import arcpy, csv, os
 
 def main():
 
-    workspace = 'C:/Users/justinhawley/Desktop/input'
-    output_folder = 'C:/Users/justinhawley/Desktop/output'
+    workspace = arcpy.GetParameterAsText(0)
+    output_folder = arcpy.GetParameterAsText(1)
 
     for dirpath, dirnames, filenames in arcpy.da.Walk(workspace):
         for filename in filenames:
