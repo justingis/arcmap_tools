@@ -15,7 +15,7 @@ import arcpy, csv, os
 def main():
 
     workspace = 'C:/Users/justinhawley/Desktop/input'
-    output_folder = 'C:/Users/justinhawley/Desktop/output' #change to output folder
+    output_folder = 'C:/Users/justinhawley/Desktop/output'
 
     for dirpath, dirnames, filenames in arcpy.da.Walk(workspace):
         for filename in filenames:
@@ -25,6 +25,7 @@ def main():
             output_csv = os.path.join(output_folder, desc.name + '.csv')
             with open(output_csv, 'wb') as csv_table:
                 csv_writer = csv.writer(csv_table)
+                csv_writer.writerow(['Name', 'Type', 'Length'])
                 for field in fields:
                     csv_writer.writerow([field.name, field.type, field.length])
             print(desc.name)
