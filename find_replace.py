@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
 # Name:        Find & Replace
-# Purpose:     Finds all instances of a text pattern and updates the attribute
-#    table accordingly
+# Purpose:     Finds all instances of a regular expression text pattern 
+# (in text fields) and updates the attribute table accordingly
 #
 # Author:      Justin Hawley (justin@orcagis.com)
 #
@@ -13,27 +13,37 @@
 import arcpy
 import re
 
+# allows user to enter a regular expression pattern
 def find(pat, text):
     match = re.search(pat, text)
     if match:
-        print(match.group())
+        return match.group()
     else:
-        print('not found')
+        return None
 
 def main():
     #input_layer = arcpy.GetParameter(0)
-    input_layer = arcpy.MakeFeatureLayer_management(r'C:\ws_consulting\gdb\input.gdb\USA_States_Generalized','USA_States_Generalized') # temporary, for dev only
+    input_layer = arcpy.MakeFeatureLayer_management(r'C:\ws_consulting\gdb\input.gdb\counties_test','counties_test') # temporary, for dev only
+    find_val = 'Howard'
+    replace_val = 'Zoward'
     desc = arcpy.Describe(input_layer)
     field_list = desc.fields
-    field_names = [f.name for f in field_list]
+    
+    # get list of fields name
+    field_names = []
+    for field in field_list:
+        if field.type == 'String':
+            field_names.append(field.name)
 
     with arcpy.da.UpdateCursor(input_layer, field_names) as cursor:
         for row in cursor:
-            for field in field_list:
-                if field.type == 'String':
-                    index = field_names.index(field.name)
-                    print(row[index])
-
-
+            for name in field_names:
+                index = field_names.index(name)
+                field_val = row[index]
+                found = find(find_val, field_val)
+                if found:
+                    field_val = field_val.replace(find_val, replace_val)
+                    print(field_val)
+                    
 if __name__ == '__main__':
     main()
