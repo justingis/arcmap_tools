@@ -13,7 +13,18 @@
 import arcpy
 
 def main():
-    print('Hello Bash!')
+    #input_layer = arcpy.GetParameter(0)
+    input_layer = arcpy.MakeFeatureLayer_management(r'C:\ws_consulting\gdb\input.gdb\USA_States_Generalized','USA_States_Generalized') # temporary, for dev only
+    desc = arcpy.Describe(input_layer)
+    field_list = desc.fields
+    field_names = [f.name for f in field_list]
+    with arcpy.da.UpdateCursor(input_layer, field_names) as cursor:
+        for row in cursor:
+            for field in field_list:
+                if field.type == 'String':
+                    index = field_names.index(field.name)
+                    print(row[index])
+
 
 if __name__ == '__main__':
     main()
