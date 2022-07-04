@@ -13,6 +13,8 @@
 import arcpy
 import re
 
+# add option to ignore case?
+
 # allows user to enter a regular expression pattern
 def find(pat, text):
     match = re.search(pat, text)
@@ -25,7 +27,10 @@ def main():
     #input_layer = arcpy.GetParameter(0)
     input_layer = arcpy.MakeFeatureLayer_management(r'C:\ws_consulting\gdb\input.gdb\counties_test','counties_test') # temporary, for dev only
     find_val = 'Howard'
-    replace_val = 'Zoward'
+    replace_val = 'Poward'
+    ignore_case = False
+    row_update_count = 0
+
     desc = arcpy.Describe(input_layer)
     field_list = desc.fields
     
@@ -44,6 +49,10 @@ def main():
                 if found:
                     field_val = field_val.replace(find_val, replace_val)
                     print(field_val)
-                    
+                    row[index] = field_val
+                    cursor.updateRow(row)
+                    row_update_count += 1
+    print('\nUpdated {} rows'.format(row_update_count))
+
 if __name__ == '__main__':
     main()
