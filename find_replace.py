@@ -29,6 +29,7 @@ def main():
     find_val = 'Howard'
     replace_val = 'Poward'
     ignore_case = False
+    update_layer = True
     row_update_count = 0
 
     desc = arcpy.Describe(input_layer)
@@ -49,9 +50,10 @@ def main():
                 if found:
                     field_val = field_val.replace(find_val, replace_val)
                     print(field_val)
-                    row[index] = field_val
-                    cursor.updateRow(row)
-                    row_update_count += 1
+                    if update_layer:
+                        row[index] = field_val
+                        cursor.updateRow(row)
+                        row_update_count += 1
     print('\nUpdated {} rows'.format(row_update_count))
 
 if __name__ == '__main__':
