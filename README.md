@@ -1,12 +1,13 @@
 # ArcMap Tools
 Geoprocessing toolbox for ArcMap. Feel free to download and use these tools at your conveniance. And if you wish, contribute to the repo to make it better. The following tools are included:
 1. Add Coordinates: Adds XY, and or LAT LONG coordinate fields or updates existing fields.  If no update fields are selected, new additional fields will be added to the point layer.  
-3. Export Attachments: Exports attachments (stored as a blob field) to a specified folder location.  
-4. Export to XLSX: Exports a layer or table to .XLSX format.  User may select which fields to include in the export.
-5. ID Generator: Calculates unique ID's for a given input layer, field, start value, prefix, suffix, and pad value.
-6. Export Field Properties: Exports field properties to a CSV file which include field name, alias, type, length, editable, required, scale, precision, nullable, domain, and percent complete (percentage of records that have a value and are not blank or null)
-7. Export Layer Properties: Exports layer properties to a CSV file which include layer name, type, description, credits, visible, source path, source format, geometry type, has M, has Z, spatial reference, definition query, and feature count. 
-8. Workspace Reporter: Recursively walks through an input folder location or geodatabase (workspace) and generates a csv file of the schema (field name, field type, field length) for each file or feature class
+2. Export Attachments: Exports attachments (stored as a blob field) to a specified folder location.  
+3. Export to XLSX: Exports a layer or table to .XLSX format.  User may select which fields to include in the export.
+4. ID Generator: Calculates unique ID's for a given input layer, field, start value, prefix, suffix, and pad value.
+5. Export Field Properties: Exports field properties to a CSV file which include field name, alias, type, length, editable, required, scale, precision, nullable, domain, and percent complete (percentage of records that have a value and are not blank or null)
+6. Export Layer Properties: Exports layer properties to a CSV file which include layer name, type, description, credits, visible, source path, source format, geometry type, has M, has Z, spatial reference, definition query, and feature count. 
+7. Workspace Reporter: Recursively walks through an input folder location or geodatabase (workspace) and generates a csv file of the schema (field name, field type, field length) for each file or feature class
+8. Find & Replace: Finds all instances of a text pattern (regular expression) and updates the layers attribute table. If a text value is found, all instances of that text value are replaced in the record.
 
 # System Requirements
 1. Windows 10, 11
