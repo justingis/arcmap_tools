@@ -1,7 +1,8 @@
 #-------------------------------------------------------------------------------
 # Name:        Find & Replace
-# Purpose:     Finds all instances of a regular expression text pattern 
-# (in text fields) and updates the attribute table accordingly
+# Purpose:     Finds all instances of a text pattern (regular expression) and 
+# updates the layers attribute table.  If a text value is found, all instances 
+# of that text value are replaced in the record.
 #
 # Author:      Justin Hawley (justin@orcagis.com)
 #
@@ -49,7 +50,7 @@ def main():
                 found = find(find_val, field_val)
                 if found:
                     field_val = field_val.replace(find_val, replace_val)
-                    arcpy.AddMessage('Found instance of {}'.format(field_val))
+                    arcpy.AddMessage('Found instance of {}'.format(find_val))
                     if update_layer:
                         row[index] = field_val
                         cursor.updateRow(row)
