@@ -24,12 +24,12 @@ def find(pat, text):
         return None
 
 def main():
-    #input_layer = arcpy.GetParameter(0)
-    input_layer = arcpy.MakeFeatureLayer_management(r'C:\ws_consulting\gdb\input.gdb\counties_test','counties_test') # temporary, for dev only
-    find_val = 'Howard'
-    replace_val = 'Poward'
-    ignore_case = False
-    update_layer = True
+    input_layer = arcpy.GetParameter(0)
+    #input_layer = arcpy.MakeFeatureLayer_management(r'C:\ws_consulting\gdb\input.gdb\counties_test','counties_test') # temporary, for dev only
+    find_val = arcpy.GetParameterAsText(1) # '.*Pow.*' may be a text value or regular expression
+    replace_val = arcpy.GetParameterAsText(2)
+    #ignore_case = False # not used yet
+    update_layer = arcpy.GetParameter(3)
     row_update_count = 0
 
     desc = arcpy.Describe(input_layer)
