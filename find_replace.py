@@ -49,12 +49,12 @@ def main():
                 found = find(find_val, field_val)
                 if found:
                     field_val = field_val.replace(find_val, replace_val)
-                    print(field_val)
+                    arcpy.AddMessage('Found instance of {}'.format(field_val))
                     if update_layer:
                         row[index] = field_val
                         cursor.updateRow(row)
                         row_update_count += 1
-    print('\nUpdated {} rows'.format(row_update_count))
+    arcpy.AddMessage('\nUpdated {} rows'.format(row_update_count))
 
 if __name__ == '__main__':
     main()
