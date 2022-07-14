@@ -7,7 +7,7 @@ Geoprocessing toolbox for ArcMap. Feel free to download and use these tools at y
 5. Export Field Properties: Exports field properties to a CSV file which include field name, alias, type, length, editable, required, scale, precision, nullable, domain, and percent complete (percentage of records that have a value and are not blank or null)
 6. Export Layer Properties: Exports layer properties to a CSV file which include layer name, type, description, credits, visible, source path, source format, geometry type, has M, has Z, spatial reference, definition query, and feature count. 
 7. Workspace Reporter: Recursively walks through an input folder location or geodatabase (workspace) and generates a csv file of the schema (field name, field type, field length) for each file or feature class
-8. Find & Replace: Finds all instances of a text pattern (regular expression) and updates the layers attribute table. If a text value is found, all instances of that text value are replaced in the records field.
+8. Find & Replace: Finds all instances of a text pattern (regular expression) and updates the layers attribute table. If a text value is found, all instances of that text value are replaced in the record
 
 # System Requirements
 1. Windows 10, 11
