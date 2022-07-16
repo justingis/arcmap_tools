@@ -10,8 +10,12 @@
 # Interpreter: C:\Python27\ArcGIS10.8\python.exe
 #-------------------------------------------------------------------------------
 
+import arcpy
+
 def basic_erase():
-    pass
+    input_layer = arcpy.GetParameter(0)
+    erase_layer = arcpy.GetParameter(1)
+    output_feature_class = arcpy.GetParameter(1)
 
 def main():
     pass
