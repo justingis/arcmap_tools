@@ -15,7 +15,7 @@ import arcpy
 def basic_erase():
     input_layer = arcpy.GetParameter(0)
     erase_layer = arcpy.GetParameter(1)
-    output_feature_class = arcpy.GetParameter(1)
+    output_feature_class = arcpy.GetParameter(2)
 
 def main():
     pass
