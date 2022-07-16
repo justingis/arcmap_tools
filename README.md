@@ -18,8 +18,8 @@ Geoprocessing toolbox for ArcMap. Feel free to download and use these tools at y
 # Installation
 This process adds an additional package (openpyxl) to the default ArcMap Python environment. No new virtual environment is created.
 1. Clone or download repository to local PC
-2. Install openpyxl:
+2. Install openpyxl (only required for Export to XLSX):
   * Open Windows Command Prompt (CMD)
   * cd C:\Python27\ArcGIS10.8\Scripts
   * pip install openpyxl
-3. Open ArcMap or ArcCatalog and navigate to the toolbox (.tbx file) in the repository
+3. Open ArcMap or ArcCatalog and navigate to the toolbox (.tbx file) in the repository. 
