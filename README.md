@@ -8,6 +8,7 @@ Geoprocessing toolbox for ArcMap. Feel free to download and use these tools at y
 6. Export Layer Properties: Exports layer properties to a CSV file which include layer name, type, description, credits, visible, source path, source format, geometry type, has M, has Z, spatial reference, definition query, and feature count. 
 7. Workspace Reporter: Recursively walks through an input folder location or geodatabase (workspace) and generates a csv file of the schema (field name, field type, field length) for each file or feature class
 8. Find & Replace: Finds all instances of a text pattern (regular expression) and updates the layers attribute table. If a text value is found, all instances of that text value are replaced in the record
+9. Basic Erase: Allows for the same functionality as the built-in Erase tool without requiring the Advanced license (works with Basic license).
 
 # System Requirements
 1. Windows 10, 11
