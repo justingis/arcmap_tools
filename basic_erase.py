@@ -10,6 +10,8 @@
 # Interpreter: C:\Python27\ArcGIS10.8\python.exe
 #-------------------------------------------------------------------------------
 
+# remove extra fields from union analysis
+
 import arcpy
 
 def basic_erase():
@@ -26,6 +28,7 @@ def basic_erase():
 
     arcpy.SelectLayerByAttribute_management(in_layer_or_view=union_layer, selection_type='NEW_SELECTION', where_clause=where_clause)
     arcpy.DeleteRows_management(union_layer)
+
 
 def main():
     basic_erase()
